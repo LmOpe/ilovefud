@@ -8,8 +8,6 @@ function SearchRecipe() {
   const { searchQuery, isFilterOpen, diets, allergies } = state;
   const navigate = useNavigate();
 
-  //const APIKEY = process.env.VITE_API_KEY;
-
   function handleSubmit(e) {
     e.preventDefault();
 

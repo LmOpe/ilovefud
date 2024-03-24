@@ -53,7 +53,7 @@ function StoredRecipeList() {
           />
         </svg>
       </button>
-      {recipes !== null ? (
+      {recipes?.length > 0 ? (
         <RecipeItems recipes={recipes} setShouldReRender={setShouldReRender} />
       ) : (
         <p className="p-5 font-oriental text-xl ">
