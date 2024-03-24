@@ -8,7 +8,7 @@ function SearchRecipe() {
   const { searchQuery, isFilterOpen, diets, allergies } = state;
   const navigate = useNavigate();
 
-  const APIKEY = process.env.VITE_API_KEY;
+  //const APIKEY = process.env.VITE_API_KEY;
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -20,7 +20,7 @@ function SearchRecipe() {
         dispatch({ type: "setLoading", payload: true });
 
         const res = await fetch(
-          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${APIKEY}&includeIngredients=${searchQuery}&diet=${
+          `https://api.spoonacular.com/recipes/complexSearch?apiKey=37d9b78ba87a48209a37af696cb17efc&includeIngredients=${searchQuery}&diet=${
             diets.length > 0 ? diets.toString() : ""
           }&intolerances=${
             allergies.length > 0 ? allergies.toString() : ""
