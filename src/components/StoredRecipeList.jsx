@@ -12,21 +12,23 @@ function StoredRecipeList() {
   useEffect(function storeRecipe() {
     let check = 0;
 
-    recipes.forEach((result) => {
-      dispatch({
-        type: "setRecipes",
-        payload: {
-          check: check,
-          id: result.id,
-          img: result.img,
-          instructions: result.instructions,
-          ingredients: result.ingredients,
-          title: result.title,
-          summary: result.summary,
-        },
+    if (recipes) {
+      recipes.forEach((result) => {
+        dispatch({
+          type: "setRecipes",
+          payload: {
+            check: check,
+            id: result.id,
+            img: result.img,
+            instructions: result.instructions,
+            ingredients: result.ingredients,
+            title: result.title,
+            summary: result.summary,
+          },
+        });
+        check++;
       });
-      check++;
-    });
+    }
   }, []);
 
   return (
@@ -51,7 +53,7 @@ function StoredRecipeList() {
           />
         </svg>
       </button>
-      {recipes.length > 0 ? (
+      {recipes !== null ? (
         <RecipeItems recipes={recipes} setShouldReRender={setShouldReRender} />
       ) : (
         <p className="p-5 font-oriental text-xl ">
