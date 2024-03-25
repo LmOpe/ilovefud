@@ -20,7 +20,7 @@ function ListItem() {
       <p className="text-primary text-center">
         <b>Shopping list of ingredients</b>
       </p>
-      {ingredients.length < 1 ? (
+      {ingredients?.length < 1 ? (
         <p className="p-5 text-oriental text-secondary font-bold">Shopping list is empty ☹</p>
       ) : (
         <div className="mt-5">
