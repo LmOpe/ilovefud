@@ -113,8 +113,8 @@ function RecipeInfo({ items, type, setShouldReRender }) {
                 </p>
               ) : (
                 <p>
-                  <b className="mr-2 text-primary">{item.number}</b>
-                  {item.step}
+                  <b className="mr-2 text-primary">{item?.number}</b>
+                  {item?.step}
                 </p>
               )}
             </li>
