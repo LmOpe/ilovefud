@@ -12,7 +12,7 @@ function Recipes() {
     <div className="w-full">
       <Header />
       <SearchRecipe />
-      {recipes.length > 0 ? <RecipeList /> : <RecipeNotFound />}
+      {recipes?.length > 0 ? <RecipeList /> : <RecipeNotFound />}
     </div>
   );
 }
