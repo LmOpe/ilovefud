@@ -63,7 +63,7 @@ function Details({ setShouldReRender }) {
         type={"ing"}
         setShouldReRender={setShouldReRender}
       />
-      <RecipeInfo items={recipe.instructions} type={"inst"} />
+      <RecipeInfo items={recipe?.instructions} type={"inst"} />
       {!JSON.parse(localStorage.getItem("recipes"))?.some(
         (rec) => rec.id === recipe.id
       ) && (
@@ -92,7 +92,7 @@ function RecipeInfo({ items, type, setShouldReRender }) {
     <div className="my-3 font-arvo">
       <b>{type === "ing" ? "Ingredients" : "Instructions"}</b>
       <ul>
-        {items.map((item, ind) => {
+        {items?.map((item, ind) => {
           return (
             <li className="text-md my-2" key={ind}>
               {type === "ing" ? (
