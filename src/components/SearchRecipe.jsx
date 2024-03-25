@@ -22,7 +22,7 @@ function SearchRecipe() {
             diets.length > 0 ? diets.toString() : ""
           }&intolerances=${
             allergies.length > 0 ? allergies.toString() : ""
-          }&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&sort=max-used-ingredients&number=50`
+          }&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&sort=max-used-ingredients&number=20`
         );
 
         const data = await res.json();
