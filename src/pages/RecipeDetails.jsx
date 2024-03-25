@@ -23,7 +23,7 @@ function Details({ setShouldReRender }) {
   const { state } = useRecipes();
   const navigate = useNavigate();
   const { recipes } = state;
-  const recipe = recipes.filter((recipe) => recipe.title === param)[0];
+  const recipe = recipes.filter((recipe) => recipe?.title === param)[0];
 
   return (
     <div className="flex flex-col items-center pt-0 p-5">
@@ -65,7 +65,7 @@ function Details({ setShouldReRender }) {
       />
       <RecipeInfo items={recipe?.instructions} type={"inst"} />
       {!JSON.parse(localStorage.getItem("recipes"))?.some(
-        (rec) => rec.id === recipe.id
+        (rec) => rec?.id === recipe.id
       ) && (
         <button
           onClick={() => storeRecipe(recipe, setShouldReRender)}
@@ -100,7 +100,7 @@ function RecipeInfo({ items, type, setShouldReRender }) {
                   <b className="mr-2 text-xl text-primary">-</b>
                   {item?.detail}
                   <br />
-                  {!ingredients?.some((ing) => ing.name === item.name) && (
+                  {!ingredients?.some((ing) => ing?.name === item?.name) && (
                     <button
                       onClick={() =>
                         storeIngredients(item, ingredients, setShouldReRender)
