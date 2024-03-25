@@ -23,8 +23,11 @@ function Details({ setShouldReRender }) {
   const { state } = useRecipes();
   const navigate = useNavigate();
   const { recipes } = state;
-  const recipe = recipes.filter((recipe) => recipe?.title === param)[0];
+  let recipe = recipes.filter((recipe) => recipe?.title === param)[0];
 
+  if(!recipe){
+    recipe = JSON.parse(localStorage.getItem("recipes")).filter((rec) => rec?.title === param)[0];
+  }
   return (
     <div className="flex flex-col items-center pt-0 p-5">
       <button
