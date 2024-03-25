@@ -18,7 +18,7 @@ function SearchRecipe() {
         dispatch({ type: "setLoading", payload: true });
 
         const res = await fetch(
-          `https://api.spoonacular.com/recipes/complexSearch?apiKey=37d9b78ba87a48209a37af696cb17efc&includeIngredients=${searchQuery}&diet=${
+          `https://api.spoonacular.com/recipes/complexSearch?apiKey=702d8d05cc114c32849ab0682b62eb4a&includeIngredients=${searchQuery}&diet=${
             diets.length > 0 ? diets.toString() : ""
           }&intolerances=${
             allergies.length > 0 ? allergies.toString() : ""
@@ -28,7 +28,7 @@ function SearchRecipe() {
         const data = await res.json();
         if (data.results.length < 1) {
           alert(
-            `Recipes with the ingredients, ${searchQuery}, could not be found.`
+            `Recipes with the ingredients, ${searchQuery}, could not be found. This could be due to the filtering options...`
           );
           navigate(
             `/recipes?ingredients=${searchQuery}&diet=${
