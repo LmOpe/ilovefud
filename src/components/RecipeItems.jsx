@@ -24,7 +24,7 @@ function Recipe({ name, ingredientsNum, img, id, setShouldReRender }) {
 
   return (
     <div className="p-1 border border-secondary rounded-lg cursor-pointer">
-      <Link to={`/recipe/?recipe=${name}`}>
+      <Link to={`/recipe/?recipe=${id}`}>
         <img width={150} className="rounded-lg" src={img} alt={name} />
         <p className="w-[150px] bg-grey text-center text-secondary mt-2">
           {name}
