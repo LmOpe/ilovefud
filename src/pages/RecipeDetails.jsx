@@ -27,7 +27,7 @@ function Details({ setShouldReRender }) {
   let recipe = recipes?.filter((recipe) => recipe?.id === parseInt(param))[0];
   
   if(!recipe){
-    recipe = JSON.parse(localStorage.getItem("recipes")).filter((rec) => rec?.title === param)[0];
+    recipe = JSON.parse(localStorage.getItem("recipes")).filter((rec) => rec?.id === parseInt(param))[0];
   }
   return (
     <div className="flex flex-col items-center pt-0 p-5">
