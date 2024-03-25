@@ -8,6 +8,7 @@ function StoredRecipeList() {
   const recipes = JSON.parse(localStorage.getItem("recipes"));
   const navigate = useNavigate();
   const [ShouldReRender, setShouldReRender] = useState(false);
+  console.log(recipes);
 
   // useEffect(function storeRecipe() {
   //   let check = 0;
