@@ -23,7 +23,7 @@ function Details({ setShouldReRender }) {
   const { state } = useRecipes();
   const navigate = useNavigate();
   const { recipes } = state;
-  let recipe = recipes.filter((recipe) => recipe?.title === param)[0];
+  let recipe = recipes.filter((recipe) => recipe?.id === param)[0];
 
   if(!recipe){
     recipe = JSON.parse(localStorage.getItem("recipes")).filter((rec) => rec?.title === param)[0];
