@@ -65,7 +65,7 @@ function Details({ setShouldReRender }) {
       />
       <RecipeInfo items={recipe?.instructions} type={"inst"} />
       {!JSON.parse(localStorage.getItem("recipes"))?.some(
-        (rec) => rec?.id === recipe.id
+        (rec) => rec?.id === recipe?.id
       ) && (
         <button
           onClick={() => storeRecipe(recipe, setShouldReRender)}
