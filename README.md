@@ -1,8 +1,3 @@
-# React + Vite
+# I LOVE FUD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Discover new recipes effortlessly with iluvfood app! Simply input the ingredients you have on hand, and let the app scour its vast database to present you with a variety of delicious recipes tailored to your available ingredients. Whether you're in the mood for a main course, side dish, dessert, or appetizer, our app has got you covered. With features like filtering by dietary preferences, such as gluten-free or vegetarian, and the ability to save your favorite recipes for later, cooking has never been more convenient. Say goodbye to kitchen dilemmas and hello to culinary inspiration with ilovefud! 🍳🥗🍰
