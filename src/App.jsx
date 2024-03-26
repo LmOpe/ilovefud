@@ -16,7 +16,7 @@ function App() {
           <Routes>
             <Route index element={<Homepage />} />
             <Route path="recipes" element={<Recipes />} />
-            <Route path="recipe" element={<RecipeDetails />} />
+            <Route path="recipes/:id" element={<RecipeDetails />} />
             <Route path="saved-recipes" element={<SavedRecipes />} />
             <Route path="shopping-list" element={<ShoppingList />} />
             <Route path="*" element={<PageNotFound />} />
