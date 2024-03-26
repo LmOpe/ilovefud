@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 
-import { useSearchParams } from "react-router-dom";
 import Header from "../components/Header";
 import { useRecipes } from "../components/RecipeContext";
-import { useState } from "react";
+
 
 function RecipeDetails() {
   const [shouldReRender, setShouldReRender] = useState(false);
@@ -18,16 +19,15 @@ function RecipeDetails() {
 }
 
 function Details({ setShouldReRender }) {
-  const [searchParams] = useSearchParams();
-  const param = searchParams.get("recipe");
+  const { id } = useParams();
   const { state } = useRecipes();
   const navigate = useNavigate();
   const { recipes } = state;
 
-  let recipe = recipes?.filter((recipe) => recipe?.id === parseInt(param))[0];
+  let recipe = recipes?.filter((recipe) => recipe?.id === parseInt(id))[0];
   
   if(!recipe){
-    recipe = JSON.parse(localStorage.getItem("recipes")).filter((rec) => rec?.id === parseInt(param))[0];
+    recipe = JSON.parse(localStorage.getItem("recipes")).filter((rec) => rec?.id === parseInt(id))[0];
   }
   return (
     <div className="flex flex-col items-center pt-0 p-5">
